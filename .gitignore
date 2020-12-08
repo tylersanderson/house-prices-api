@@ -5,3 +5,6 @@
 /model/data
 /model/.ipynb_checkpoints
 /.vscode
+app/node_modules
+app/.pnp
+app/.pnp.js

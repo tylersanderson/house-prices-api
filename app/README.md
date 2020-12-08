@@ -1,0 +1,1 @@
+UI5 React app front-end for the House Price prediciton model.
