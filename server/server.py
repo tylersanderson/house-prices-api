@@ -1,11 +1,14 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+from flask_cors import CORS, cross_origin
 import joblib
 from joblib import load
 import numpy as np
 
 APP = Flask(__name__)
 API = Api(APP)
+cors = CORS(APP)
+APP.config['CORS_HEADERS'] = 'Content-Type'
 
 HOUSE_PRICES_MODEL = joblib.load('../model/house_prices.mdl')
 
@@ -13,6 +16,7 @@ HOUSE_PRICES_MODEL = joblib.load('../model/house_prices.mdl')
 class Predict(Resource):
 
     @staticmethod
+    @cross_origin()
     def post():
         parser = reqparse.RequestParser()
         parser.add_argument('OverallQual')
