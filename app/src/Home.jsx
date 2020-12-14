@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   FlexBox,
   FlexBoxJustifyContent,
@@ -24,6 +24,7 @@ import "@ui5/webcomponents-icons/dist/Assets.js"; // Only if using the @ui5/webc
 import { useHistory } from "react-router-dom";
 import { Form } from "@ui5/webcomponents-react/lib/Form";
 import { MessageBox } from "@ui5/webcomponents-react/lib/MessageBox";
+import { ResponsivePopover } from "@ui5/webcomponents-react/lib/ResponsivePopover";
 
 export function Home() {
   const [aboveGroundSqFt, setAboveGroundSqFt] = useState();
@@ -36,6 +37,7 @@ export function Home() {
   const [lotAreaSqFt, setLotAreaSqFt] = useState();
   const [garageAreaSqFt, setGarageAreaSqFt] = useState();
   const [garageCars, setGarageCars] = useState(1);
+  const [housePricePrediction, setHousePricePrediction] = useState();
 
   const [aboveGroundSqFtValueState, setAboveGroundSqFtValueState] = useState(
     "None"
@@ -72,6 +74,8 @@ export function Home() {
     setMessageBoxOpen(false);
   };
 
+  const popoverRef = useRef();
+
   useEffect(() => {
     wakeupServer();
   }, []);
@@ -94,44 +98,48 @@ export function Home() {
     return wakeupResponseJSON;
   }
 
-  function handleSubmit() {
-    aboveGroundSqFt == null || aboveGroundSqFt < 0
+  function handleSubmit(e) {
+    aboveGroundSqFt == null || aboveGroundSqFt < 0 || aboveGroundSqFt === ""
       ? setAboveGroundSqFtValueState("Error")
       : setAboveGroundSqFtValueState("None");
 
-    overallQuality == null || overallQuality < 1
+    overallQuality == null || overallQuality < 1 || overallQuality === ""
       ? setOverallQualityValueState("Error")
       : setOverallQualityValueState("None");
 
-    lotAreaSqFt == null || lotAreaSqFt < 0
+    lotAreaSqFt == null || lotAreaSqFt < 0 || lotAreaSqFt === ""
       ? setLotAreaSqFtValueState("Error")
       : setLotAreaSqFtValueState("None");
 
-    basementTotalSqFt == null || basementTotalSqFt < 0
+    basementTotalSqFt == null ||
+    basementTotalSqFt < 0 ||
+    basementTotalSqFt === ""
       ? setBasementTotalSqFtValueState("Error")
       : setBasementTotalSqFtValueState("None");
 
-    basementFinishSqFt == null || basementFinishSqFt < 0
+    basementFinishSqFt == null ||
+    basementFinishSqFt < 0 ||
+    basementFinishSqFt === ""
       ? setBasementFinishSqFtValueState("Error")
       : setBasementFinishSqFtValueState("None");
 
-    firstFloorSqFt == null || firstFloorSqFt < 0
+    firstFloorSqFt == null || firstFloorSqFt < 0 || firstFloorSqFt === ""
       ? setFirstFloorSqFtValueState("Error")
       : setFirstFloorSqFtValueState("None");
 
-    secondFloorSqFt == null || secondFloorSqFt < 0
+    secondFloorSqFt == null || secondFloorSqFt < 0 || secondFloorSqFt === ""
       ? setSecondFloorSqFtValueState("Error")
       : setSecondFloorSqFtValueState("None");
 
-    yearBuilt == null || yearBuilt < 1900
+    yearBuilt == null || yearBuilt < 1900 || yearBuilt === ""
       ? setYearBuiltValueState("Error")
       : setYearBuiltValueState("None");
 
-    garageAreaSqFt == null || garageAreaSqFt < 0
+    garageAreaSqFt == null || garageAreaSqFt < 0 || garageAreaSqFt === ""
       ? setGarageAreaSqFtValueState("Error")
       : setGarageAreaSqFtValueState("None");
 
-    garageCars == null || garageCars < 0
+    garageCars == null || garageCars < 0 || garageCars === ""
       ? setGarageCarsValueState("Error")
       : setGarageCarsValueState("None");
 
@@ -154,24 +162,34 @@ export function Home() {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          setHousePricePrediction(data.Prediction);
         });
     }
 
     const validationBool =
       aboveGroundSqFt >= 0 &&
+      aboveGroundSqFt !== "" &&
       overallQuality > 0 &&
+      overallQuality !== "" &&
       basementFinishSqFt >= 0 &&
+      basementFinishSqFt !== "" &&
       basementTotalSqFt >= 0 &&
+      basementTotalSqFt !== "" &&
       secondFloorSqFt >= 0 &&
+      secondFloorSqFt !== "" &&
       yearBuilt >= 1900 &&
       firstFloorSqFt >= 0 &&
+      firstFloorSqFt !== "" &&
       lotAreaSqFt >= 0 &&
+      lotAreaSqFt !== "" &&
       garageAreaSqFt >= 0 &&
-      garageCars >= 0;
+      garageAreaSqFt !== "" &&
+      garageCars >= 0 &&
+      garageCars !== "";
 
     if (validationBool === true) {
       predictionPost();
+      popoverRef.current.open(e.target);
     } else {
       openMessageBox();
     }
@@ -212,7 +230,7 @@ export function Home() {
               onChange={(e) => {
                 setOverallQuality(e.detail.selectedOption.dataset.id);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             >
               {overallRatingOptions.map((item) => (
                 <Option key={item.id} data-id={item.id}>
@@ -229,7 +247,7 @@ export function Home() {
               onChange={(e) => {
                 setAboveGroundSqFt(e.target.value);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             />
           </FormItem>
           <FormItem label="Lot Area Sq-Ft">
@@ -240,7 +258,7 @@ export function Home() {
               onChange={(e) => {
                 setLotAreaSqFt(e.target.value);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             />
           </FormItem>
           <FormItem label="Basement Total Sq-Ft">
@@ -251,7 +269,7 @@ export function Home() {
               onChange={(e) => {
                 setBasementTotalSqFt(e.target.value);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             />
           </FormItem>
           <FormItem label="Basement Fisnished Sq-Ft">
@@ -262,7 +280,7 @@ export function Home() {
               onChange={(e) => {
                 setBasemenFinishSqFt(e.target.value);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             />
           </FormItem>
           <FormItem label="First Floor Sq-Ft">
@@ -273,7 +291,7 @@ export function Home() {
               onChange={(e) => {
                 setFirstFloorSqFt(e.target.value);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             />
           </FormItem>
           <FormItem label="Second Floor Sq-Ft">
@@ -284,7 +302,7 @@ export function Home() {
               onChange={(e) => {
                 setSecondFloorSqFt(e.target.value);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             />
           </FormItem>
           <FormItem label="Year Built">
@@ -295,7 +313,7 @@ export function Home() {
               onChange={(e) => {
                 setYearBuilt(e.target.value);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             />
           </FormItem>
           <FormItem label="Garage Sq-Ft">
@@ -306,7 +324,7 @@ export function Home() {
               onChange={(e) => {
                 setGarageAreaSqFt(e.target.value);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             />
           </FormItem>
           <FormItem label="Garage Cars">
@@ -316,7 +334,7 @@ export function Home() {
               onChange={(e) => {
                 setGarageCars(e.detail.selectedOption.dataset.id);
               }}
-              onSubmit={handleSubmit}
+              //onSubmit={handleSubmit}
             >
               {garageCarOptions.map((item) => (
                 <Option key={item.id} data-id={item.id}>
@@ -348,6 +366,11 @@ export function Home() {
         >
           Please ensure all fields are populated with valid entries
         </MessageBox>
+      </div>
+      <div>
+        <ResponsivePopover ref={popoverRef}>
+          ${housePricePrediction}
+        </ResponsivePopover>
       </div>
     </div>
   );

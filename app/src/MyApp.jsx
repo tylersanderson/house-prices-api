@@ -21,9 +21,7 @@ export function MyApp() {
         profile={<Avatar image="ui5-logo.png" />}
         primaryTitle={"House Price Prediction"}
         onLogoClick={handleLogoClick}
-      >
-        <ShellBarItem src="sap-icon://add" text="Add" />
-      </ShellBar>
+      ></ShellBar>
       <Switch>
         <Route path="/home" component={Home} />
         <Redirect from="/" to="/home" />
