@@ -1,5 +1,5 @@
 import React from "react";
-import { ShellBar, ShellBarItem, Avatar } from "@ui5/webcomponents-react";
+import { ShellBar, Avatar } from "@ui5/webcomponents-react";
 import "@ui5/webcomponents-icons/dist/icons/add.js";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Home } from "./Home";

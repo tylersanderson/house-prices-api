@@ -4,15 +4,11 @@ import {
   FlexBoxJustifyContent,
   FlexBoxWrap,
   Button,
-  Card,
 } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { Input } from "@ui5/webcomponents-react/lib/Input";
-import { CheckBox } from "@ui5/webcomponents-react/lib/CheckBox";
 import { Select } from "@ui5/webcomponents-react/lib/Select";
-import { Label } from "@ui5/webcomponents-react/lib/Label";
 import { FormItem } from "@ui5/webcomponents-react/lib/FormItem";
-import { FormGroup } from "@ui5/webcomponents-react/lib/FormGroup";
 import { Option } from "@ui5/webcomponents-react/lib/Option";
 import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
 import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
@@ -21,7 +17,6 @@ import "@ui5/webcomponents-icons/dist/icons/table-view.js";
 import "@ui5/webcomponents/dist/Assets.js";
 import "@ui5/webcomponents-fiori/dist/Assets.js"; // Only if using the @ui5/webcomponents-fiori package
 import "@ui5/webcomponents-icons/dist/Assets.js"; // Only if using the @ui5/webcomponents-icons package
-import { useHistory } from "react-router-dom";
 import { Form } from "@ui5/webcomponents-react/lib/Form";
 import { MessageBox } from "@ui5/webcomponents-react/lib/MessageBox";
 import { ResponsivePopover } from "@ui5/webcomponents-react/lib/ResponsivePopover";
@@ -79,18 +74,6 @@ export function Home() {
   useEffect(() => {
     wakeupServer();
   }, []);
-
-  // useEffect(() => {
-  //   function checkValueStates() {
-  //     const allValueStates = [aboveGroundSqFtValueState];
-  //     if (allValueStates.indexOf("Error") !== -1) {
-  //       alert("Error exists!");
-  //     } else {
-  //       alert("Error does not exist");
-  //     }
-  //   }
-  //   checkValueStates();
-  // });
 
   async function wakeupServer() {
     let wakeupResponse = await fetch("http://127.0.0.1:1080/wakeup");
@@ -350,11 +333,7 @@ export function Home() {
         wrap={FlexBoxWrap.Wrap}
         style={spacing.sapUiContentPadding}
       >
-        <Button
-          //icon="arrow-right"
-          onClick={handleSubmit}
-          disabled={false}
-        >
+        <Button onClick={handleSubmit} disabled={false}>
           Submit
         </Button>
       </FlexBox>
