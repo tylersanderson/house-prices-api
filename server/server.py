@@ -53,5 +53,9 @@ class Wakeup(Resource):
 API.add_resource(Predict, '/predict')
 API.add_resource(Wakeup, '/wakeup')
 
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+
 # if __name__ == '__main__':
 #     APP.run(debug=True, port='1080')
