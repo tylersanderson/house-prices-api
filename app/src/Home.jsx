@@ -76,7 +76,9 @@ export function Home() {
   }, []);
 
   async function wakeupServer() {
-    let wakeupResponse = await fetch("http://127.0.0.1:1080/wakeup");
+    let wakeupResponse = await fetch(
+      "https://peaceful-castle-35694.herokuapp.com/wakeup"
+    );
     let wakeupResponseJSON = await wakeupResponse.json();
     return wakeupResponseJSON;
   }
@@ -127,7 +129,7 @@ export function Home() {
       : setGarageCarsValueState("None");
 
     async function predictionPost() {
-      fetch("http://127.0.0.1:1080/predict", {
+      fetch("https://peaceful-castle-35694.herokuapp.com/predict", {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
