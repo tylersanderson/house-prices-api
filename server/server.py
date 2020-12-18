@@ -4,6 +4,7 @@ from flask_cors import CORS, cross_origin
 import joblib
 from joblib import load
 import numpy as np
+import os
 
 APP = Flask(__name__)
 API = Api(APP)
@@ -55,7 +56,7 @@ API.add_resource(Wakeup, '/wakeup')
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    APP.run(host='0.0.0.0', port=port)
 
 # if __name__ == '__main__':
 #     APP.run(debug=True, port='1080')
