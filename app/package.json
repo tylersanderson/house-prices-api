@@ -1,4 +1,5 @@
 {
+  "homepage": "https://tylersanderson.github.io/house-price-prediction",
   "name": "House-Prediction-UI5",
   "version": "0.1.0",
   "private": true,
@@ -19,6 +20,8 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env jest-environment-jsdom-sixteen",
