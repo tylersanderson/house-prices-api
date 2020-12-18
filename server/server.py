@@ -10,7 +10,7 @@ API = Api(APP)
 cors = CORS(APP)
 APP.config['CORS_HEADERS'] = 'Content-Type'
 
-HOUSE_PRICES_MODEL = joblib.load('../model/house_prices.mdl')
+HOUSE_PRICES_MODEL = joblib.load('./house_prices.mdl')
 
 
 class Predict(Resource):
