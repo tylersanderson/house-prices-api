@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/house-price-prediction/static/css/main.d74098ff.chunk.css",
-    "main.js": "/house-price-prediction/static/js/main.7546789c.chunk.js",
-    "main.js.map": "/house-price-prediction/static/js/main.7546789c.chunk.js.map",
-    "runtime-main.js": "/house-price-prediction/static/js/runtime-main.9751f27d.js",
-    "runtime-main.js.map": "/house-price-prediction/static/js/runtime-main.9751f27d.js.map",
-    "static/js/2.bf6aeb61.chunk.js": "/house-price-prediction/static/js/2.bf6aeb61.chunk.js",
-    "static/js/2.bf6aeb61.chunk.js.map": "/house-price-prediction/static/js/2.bf6aeb61.chunk.js.map",
-    "index.html": "/house-price-prediction/index.html",
-    "precache-manifest.dde2bf068bc549d8acbba88029d0eabb.js": "/house-price-prediction/precache-manifest.dde2bf068bc549d8acbba88029d0eabb.js",
-    "service-worker.js": "/house-price-prediction/service-worker.js",
-    "static/css/main.d74098ff.chunk.css.map": "/house-price-prediction/static/css/main.d74098ff.chunk.css.map",
-    "static/js/2.bf6aeb61.chunk.js.LICENSE.txt": "/house-price-prediction/static/js/2.bf6aeb61.chunk.js.LICENSE.txt"
+    "main.css": "/house-prices-api/static/css/main.d74098ff.chunk.css",
+    "main.js": "/house-prices-api/static/js/main.0ad206cb.chunk.js",
+    "main.js.map": "/house-prices-api/static/js/main.0ad206cb.chunk.js.map",
+    "runtime-main.js": "/house-prices-api/static/js/runtime-main.519245f3.js",
+    "runtime-main.js.map": "/house-prices-api/static/js/runtime-main.519245f3.js.map",
+    "static/js/2.bf6aeb61.chunk.js": "/house-prices-api/static/js/2.bf6aeb61.chunk.js",
+    "static/js/2.bf6aeb61.chunk.js.map": "/house-prices-api/static/js/2.bf6aeb61.chunk.js.map",
+    "index.html": "/house-prices-api/index.html",
+    "precache-manifest.a174002a63ac3f303773788b6e4f11ac.js": "/house-prices-api/precache-manifest.a174002a63ac3f303773788b6e4f11ac.js",
+    "service-worker.js": "/house-prices-api/service-worker.js",
+    "static/css/main.d74098ff.chunk.css.map": "/house-prices-api/static/css/main.d74098ff.chunk.css.map",
+    "static/js/2.bf6aeb61.chunk.js.LICENSE.txt": "/house-prices-api/static/js/2.bf6aeb61.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9751f27d.js",
+    "static/js/runtime-main.519245f3.js",
     "static/js/2.bf6aeb61.chunk.js",
     "static/css/main.d74098ff.chunk.css",
-    "static/js/main.7546789c.chunk.js"
+    "static/js/main.0ad206cb.chunk.js"
   ]
 }
