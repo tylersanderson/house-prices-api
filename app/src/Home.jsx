@@ -224,94 +224,6 @@ export function Home() {
               ))}
             </Select>
           </FormItem>
-          <FormItem label="Above Ground Sq-Ft">
-            <Input
-              required={true}
-              type="Number"
-              valueState={aboveGroundSqFtValueState}
-              onChange={(e) => {
-                setAboveGroundSqFt(e.target.value);
-              }}
-              //onSubmit={handleSubmit}
-            />
-          </FormItem>
-          <FormItem label="Lot Area Sq-Ft">
-            <Input
-              required={true}
-              type="Number"
-              valueState={lotAreaSqFtValueState}
-              onChange={(e) => {
-                setLotAreaSqFt(e.target.value);
-              }}
-              //onSubmit={handleSubmit}
-            />
-          </FormItem>
-          <FormItem label="Basement Total Sq-Ft">
-            <Input
-              required={true}
-              type="Number"
-              valueState={basementTotalSqFtValueState}
-              onChange={(e) => {
-                setBasementTotalSqFt(e.target.value);
-              }}
-              //onSubmit={handleSubmit}
-            />
-          </FormItem>
-          <FormItem label="Basement Fisnished Sq-Ft">
-            <Input
-              required={true}
-              type="Number"
-              valueState={basementFinishSqFtValueState}
-              onChange={(e) => {
-                setBasemenFinishSqFt(e.target.value);
-              }}
-              //onSubmit={handleSubmit}
-            />
-          </FormItem>
-          <FormItem label="First Floor Sq-Ft">
-            <Input
-              required={true}
-              type="Number"
-              valueState={firstFloorSqFtValueState}
-              onChange={(e) => {
-                setFirstFloorSqFt(e.target.value);
-              }}
-              //onSubmit={handleSubmit}
-            />
-          </FormItem>
-          <FormItem label="Second Floor Sq-Ft">
-            <Input
-              required={true}
-              type="Number"
-              valueState={secondFloorSqFtValueState}
-              onChange={(e) => {
-                setSecondFloorSqFt(e.target.value);
-              }}
-              //onSubmit={handleSubmit}
-            />
-          </FormItem>
-          <FormItem label="Year Built">
-            <Input
-              required={true}
-              type="Number"
-              valueState={yearBuiltValueState}
-              onChange={(e) => {
-                setYearBuilt(e.target.value);
-              }}
-              //onSubmit={handleSubmit}
-            />
-          </FormItem>
-          <FormItem label="Garage Sq-Ft">
-            <Input
-              required={true}
-              type="Number"
-              valueState={garageAreaSqFtValueState}
-              onChange={(e) => {
-                setGarageAreaSqFt(e.target.value);
-              }}
-              //onSubmit={handleSubmit}
-            />
-          </FormItem>
           <FormItem label="Garage Cars">
             <Select
               required={true}
@@ -327,6 +239,94 @@ export function Home() {
                 </Option>
               ))}
             </Select>
+          </FormItem>
+          <FormItem label="Garage Sq-Ft">
+            <Input
+              required={true}
+              type="Number"
+              valueState={garageAreaSqFtValueState}
+              onInput={(e) => {
+                setGarageAreaSqFt(e.target.value);
+              }}
+              //onSubmit={handleSubmit}
+            />
+          </FormItem>
+          <FormItem label="Above Ground Sq-Ft">
+            <Input
+              required={true}
+              type="Number"
+              valueState={aboveGroundSqFtValueState}
+              onInput={(e) => {
+                setAboveGroundSqFt(e.target.value);
+              }}
+              //onSubmit={handleSubmit}
+            />
+          </FormItem>
+          <FormItem label="Lot Area Sq-Ft">
+            <Input
+              required={true}
+              type="Number"
+              valueState={lotAreaSqFtValueState}
+              onInput={(e) => {
+                setLotAreaSqFt(e.target.value);
+              }}
+              //onSubmit={handleSubmit}
+            />
+          </FormItem>
+          <FormItem label="Basement Total Sq-Ft">
+            <Input
+              required={true}
+              type="Number"
+              valueState={basementTotalSqFtValueState}
+              onInput={(e) => {
+                setBasementTotalSqFt(e.target.value);
+              }}
+              //onSubmit={handleSubmit}
+            />
+          </FormItem>
+          <FormItem label="Basement Fisnished Sq-Ft">
+            <Input
+              required={true}
+              type="Number"
+              valueState={basementFinishSqFtValueState}
+              onInput={(e) => {
+                setBasemenFinishSqFt(e.target.value);
+              }}
+              //onSubmit={handleSubmit}
+            />
+          </FormItem>
+          <FormItem label="First Floor Sq-Ft">
+            <Input
+              required={true}
+              type="Number"
+              valueState={firstFloorSqFtValueState}
+              onInput={(e) => {
+                setFirstFloorSqFt(e.target.value);
+              }}
+              //onSubmit={handleSubmit}
+            />
+          </FormItem>
+          <FormItem label="Second Floor Sq-Ft">
+            <Input
+              required={true}
+              type="Number"
+              valueState={secondFloorSqFtValueState}
+              onInput={(e) => {
+                setSecondFloorSqFt(e.target.value);
+              }}
+              //onSubmit={handleSubmit}
+            />
+          </FormItem>
+          <FormItem label="Year Built">
+            <Input
+              required={true}
+              type="Number"
+              valueState={yearBuiltValueState}
+              onInput={(e) => {
+                setYearBuilt(e.target.value);
+              }}
+              //onSubmit={handleSubmit}
+            />
           </FormItem>
         </Form>
       </FlexBox>
