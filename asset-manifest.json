@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/house-prices-api/static/css/main.d74098ff.chunk.css",
-    "main.js": "/house-prices-api/static/js/main.0ad206cb.chunk.js",
-    "main.js.map": "/house-prices-api/static/js/main.0ad206cb.chunk.js.map",
+    "main.js": "/house-prices-api/static/js/main.f57d34d8.chunk.js",
+    "main.js.map": "/house-prices-api/static/js/main.f57d34d8.chunk.js.map",
     "runtime-main.js": "/house-prices-api/static/js/runtime-main.519245f3.js",
     "runtime-main.js.map": "/house-prices-api/static/js/runtime-main.519245f3.js.map",
     "static/js/2.bf6aeb61.chunk.js": "/house-prices-api/static/js/2.bf6aeb61.chunk.js",
     "static/js/2.bf6aeb61.chunk.js.map": "/house-prices-api/static/js/2.bf6aeb61.chunk.js.map",
     "index.html": "/house-prices-api/index.html",
-    "precache-manifest.a174002a63ac3f303773788b6e4f11ac.js": "/house-prices-api/precache-manifest.a174002a63ac3f303773788b6e4f11ac.js",
+    "precache-manifest.798edeb13746bfee17dbef8d14b1506a.js": "/house-prices-api/precache-manifest.798edeb13746bfee17dbef8d14b1506a.js",
     "service-worker.js": "/house-prices-api/service-worker.js",
     "static/css/main.d74098ff.chunk.css.map": "/house-prices-api/static/css/main.d74098ff.chunk.css.map",
     "static/js/2.bf6aeb61.chunk.js.LICENSE.txt": "/house-prices-api/static/js/2.bf6aeb61.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.519245f3.js",
     "static/js/2.bf6aeb61.chunk.js",
     "static/css/main.d74098ff.chunk.css",
-    "static/js/main.0ad206cb.chunk.js"
+    "static/js/main.f57d34d8.chunk.js"
   ]
 }

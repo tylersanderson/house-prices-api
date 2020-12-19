@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "28561cad977480a7abc27afac5ec44b7",
+    "revision": "282bdaaa03c4402dba1af2eb18939f3a",
     "url": "/house-prices-api/index.html"
   },
   {
-    "revision": "38f9bf11bca95d0e0f01",
+    "revision": "30cb8346e1339c8e76b4",
     "url": "/house-prices-api/static/css/main.d74098ff.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/house-prices-api/static/js/2.bf6aeb61.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "38f9bf11bca95d0e0f01",
-    "url": "/house-prices-api/static/js/main.0ad206cb.chunk.js"
+    "revision": "30cb8346e1339c8e76b4",
+    "url": "/house-prices-api/static/js/main.f57d34d8.chunk.js"
   },
   {
     "revision": "c51cf5937edc14a6b162",
