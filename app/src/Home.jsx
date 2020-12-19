@@ -19,7 +19,7 @@ import "@ui5/webcomponents-fiori/dist/Assets.js"; // Only if using the @ui5/webc
 import "@ui5/webcomponents-icons/dist/Assets.js"; // Only if using the @ui5/webcomponents-icons package
 import { Form } from "@ui5/webcomponents-react/lib/Form";
 import { MessageBox } from "@ui5/webcomponents-react/lib/MessageBox";
-import { ResponsivePopover } from "@ui5/webcomponents-react/lib/ResponsivePopover";
+import { Dialog } from "@ui5/webcomponents-react/lib/Dialog";
 
 export function Home() {
   const [aboveGroundSqFt, setAboveGroundSqFt] = useState();
@@ -69,7 +69,7 @@ export function Home() {
     setMessageBoxOpen(false);
   };
 
-  const popoverRef = useRef();
+  const dialogRef = useRef();
 
   useEffect(() => {
     wakeupServer();
@@ -174,7 +174,7 @@ export function Home() {
 
     if (validationBool === true) {
       predictionPost();
-      popoverRef.current.open(e.target);
+      dialogRef.current.open();
     } else {
       openMessageBox();
     }
@@ -349,9 +349,15 @@ export function Home() {
         </MessageBox>
       </div>
       <div>
-        <ResponsivePopover ref={popoverRef}>
+        <Dialog
+          ref={dialogRef}
+          footer={
+            <Button onClick={() => dialogRef.current.close()}>Close</Button>
+          }
+          headerText="House Price Prediction"
+        >
           ${housePricePrediction}
-        </ResponsivePopover>
+        </Dialog>
       </div>
     </div>
   );
