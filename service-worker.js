@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/house-prices-api/precache-manifest.798edeb13746bfee17dbef8d14b1506a.js"
+  "/house-prices-api/precache-manifest.171882b9d029fab1ea63354048f93717.js"
 );
 
 self.addEventListener('message', (event) => {
